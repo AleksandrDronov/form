@@ -1,0 +1,86 @@
+.form {
+  width: 916px;
+  padding-top: 90px;
+  margin: 0 auto;
+}
+
+.section_city {
+  width: 560px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 90px;
+  padding-bottom: 32px;
+}
+
+.section_password {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  align-items: center;
+  width: 916px;
+  height: 102px;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #E5E4E4;
+  border-top: 1px solid #E5E4E4;
+}
+
+.password {
+  width: 560px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password_title {
+  width: 339px;
+  font-size: 12px;
+  color: #999999;;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.section_email {
+  width: 916px;
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.section_check {
+  width: 600px;
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
+  padding-bottom: 40px;
+}
+
+.checkbox_title {
+  font-size: 16px;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.section_button {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: 119px;
+  height: 40px;
+  color: #FFFFFF;
+  font-size: 18px;
+  background-color: #71C838;
+  border: none;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 224px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.button:hover {
+  background-color: #45a306;
+}

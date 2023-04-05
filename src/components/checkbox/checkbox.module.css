@@ -1,0 +1,26 @@
+.label {
+  font-size: 21px;
+  font-weight: normal;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  display: none;
+}
+
+.pseudo_checkbox {
+  width: 15px;
+  height: 15px;
+  border: 1px solid;
+  margin-left: 115px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.checkbox:checked + .pseudo_checkbox {
+  background-image: url('../../images/Vector.svg');
+}
