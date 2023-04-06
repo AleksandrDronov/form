@@ -60,3 +60,8 @@
   border-bottom: 1px dashed #0C77BB;
   cursor: pointer;
 }
+
+.tooltip .tooltiptext_visible {
+  visibility: visible;
+  opacity: 1;
+}

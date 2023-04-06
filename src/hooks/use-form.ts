@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
 
-export default function useForm(inputValues: any) {
+export default function useForm(inputValues: { password: string, repeatPassword: string, email: string}) {
   const [values, setValues] = useState(inputValues);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

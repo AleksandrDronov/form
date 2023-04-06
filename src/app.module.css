@@ -84,3 +84,16 @@
 .button:hover {
   background-color: #45a306;
 }
+
+.disable_button {
+  width: 119px;
+  height: 40px;
+  color: #FFFFFF;
+  font-size: 18px;
+  border: none;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 224px;
+  cursor: not-allowed;
+  transition: .5s;
+  background-color: #858983;
+}

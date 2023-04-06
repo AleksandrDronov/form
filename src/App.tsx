@@ -1,3 +1,4 @@
+import { FormEvent, useState } from "react";
 import styles from "./app.module.css";
 import Header from "./components/header/header";
 import data from "./data/cities.json";
@@ -5,41 +6,34 @@ import Select from "./components/select/select";
 import Input from "./components/input/input";
 import useForm from "./hooks/use-form";
 import Checkbox from "./components/checkbox/checkbox";
+import getDate from "./utils/get-date";
+import filterCities from "./utils/cities-filter";
 
 function App() {
   const { values, handleChange } = useForm({ password: "", repeatPassword: "", email: ""});
+  const [ date, setDate ] = useState<null | string>(null);
 
-  //фильтруем по численности населения и сортируем по алфавиту
-  const cities = data
-    .filter((item) => +item.population > 50000)
-    .sort((a, b) => {
-      if (a.city > b.city) {
-        return 1;
-      }
-      if (a.city < b.city) {
-        return -1;
-      }
-      return 0;
-    });
+  //фильтруем массив по численности населения и сортируем по алфавиту
+  const cities = filterCities(data);
 
-  //ищем индекс города с максимальной численностью населения
-  let indexCityWithMaxPopulation = 0;
-  let population = +cities[0].population;
+  let disableButton = false;
+  const emailReg = /^([a-z0-9_.-]+)@([a-z0-9_.-]+)\.([a-z.]{2,6})$/;
 
-  for (let i = 1; i < cities.length; i++) {
-    if (+cities[i].population > population) {
-      indexCityWithMaxPopulation = i;
-      population = +cities[i].population;
-    }
+  if (values.password.length < 5 || values.repeatPassword.length < 5 || !emailReg.test(values.email)) {
+    disableButton = true;
+  } else if (values.password !== values.repeatPassword) {
+    disableButton = true;
   }
 
-  //вставляем в начало массива город с максимальной численностью населения
-  cities.unshift(cities[indexCityWithMaxPopulation]);
-  //удаляем из массива город с максимальной численностью населения
-  cities.splice(indexCityWithMaxPopulation + 1, 1);
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const dateMessage = getDate();
+    setDate(dateMessage);
+    console.log(JSON.stringify(values))
+  }
 
   return (
-    <form className={styles.form} noValidate>
+    <form className={styles.form} noValidate onSubmit={handleSubmit}>
       <Header />
       <div className={styles.section_city}>
         <Select cities={cities} label="Ваш город" />
@@ -94,10 +88,10 @@ function App() {
         </p>
       </div>
       <div className={styles.section_button}>
-        <button className={styles.button}>Изменить</button>
-        <p className={styles.password_title}>
-          последние изменения 15 мая 2012 в 14:55:17
-        </p>
+        <button className={disableButton ? styles.disable_button : styles.button} disabled={disableButton}>Изменить</button>
+        {date && <p className={styles.password_title}>
+          последние изменения {date}
+        </p>}
       </div >
     </form>
   );
