@@ -9,6 +9,7 @@
   border-radius: 0;
   border: 1px solid #999999;
   box-sizing: border-box;
+  outline: none;
 }
 
 .input_error {

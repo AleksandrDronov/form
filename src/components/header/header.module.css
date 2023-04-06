@@ -23,10 +23,7 @@
   align-items: center;
   width: 500px;
   height: 46px;
-  font-size: 14px;
-  font-weight: normal;
   background-color: #E5E5E5;
-  color: #404040;
   padding-left: 10px;
   position: absolute;
   z-index: 1;
@@ -64,4 +61,14 @@
 .tooltip .tooltiptext_visible {
   visibility: visible;
   opacity: 1;
+}
+
+.input {
+  width: 485px;
+  font-size: 14px;
+  font-weight: normal;
+  background-color: #E5E5E5;
+  color: #404040;
+  border: none;
+  outline: none;
 }
