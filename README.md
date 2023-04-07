@@ -1,4 +1,4 @@
-# Личный кабинет пользователя.
+# Личный кабинет пользователя
 
 [ссылка](https://aleksandrdronov.github.io/form/)
 
@@ -13,7 +13,7 @@
 
 1. Клонировать репозиторий.
 
-   git clone git@github.com:AleksandrDronov/form.git
+   git clone git@github.com:AleksandrDronov/user-account.git
 
 2. Войти в папку проекта.
 
