@@ -6,7 +6,7 @@
 Фигма: <a  href="https://www.figma.com/file/6G3qbUlTL1mlHbIH2MHaCW/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82?node-id=0%3A1&t=i3cWLfexNNAAw9Ti-1" target="_blank">ссылка</a>
 
 ### Используемые технологии:
-- Typescript
+- TypeScript
 - ReactJS
 
 ### Запуск проекта:
@@ -17,7 +17,7 @@
 
 2. Войти в папку проекта.
 
-   cd form
+   cd user-account
 
 3. Установить зависимости.
 
